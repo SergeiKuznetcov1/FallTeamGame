@@ -9,8 +9,14 @@ public class PlayerAnimationController : MonoBehaviour
         playerAbsSpeed = Mathf.Abs(playerController.HorInput);
         animator.SetFloat("PlayerSpeed", playerAbsSpeed);
         animator.SetBool("IsGrounded", playerController.IsGrounded);
+        
         if (!playerController.DoubleJumpAble) {
             animator.SetTrigger("DoubleJump");
+        }
+
+        if (playerController.FireballAttack) {
+            animator.SetTrigger("FireballAttack");
+            playerController.FireballAttack = false;
         }
     }
 }

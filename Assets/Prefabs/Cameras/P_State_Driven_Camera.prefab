@@ -88,6 +88,8 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: -1398397431
     m_ParentHash: 756556552
+  - m_Hash: 526755558
+    m_ParentHash: 756556552
 --- !u!1001 &4987655830269568978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,15 +103,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2882478796466272464, guid: 517fcf9e14d4b97419d308905f2f2197, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 2882478796466272464, guid: 517fcf9e14d4b97419d308905f2f2197, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.2058277
+      value: 5.89819
       objectReference: {fileID: 0}
     - target: {fileID: 2882478796466272464, guid: 517fcf9e14d4b97419d308905f2f2197, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.59111
+      value: -9.659258
       objectReference: {fileID: 0}
     - target: {fileID: 2882478796466272464, guid: 517fcf9e14d4b97419d308905f2f2197, type: 3}
       propertyPath: m_LocalRotation.w
@@ -184,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 1, z: 0}
-  m_LookaheadTime: 0.5
+  m_LookaheadTime: 0.3
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 1
   m_XDamping: 1
@@ -193,7 +195,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 12
+  m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -223,7 +225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7064773651406001419, guid: 6b9f84db82e68ea4a8eeff94fd4bf6fe, type: 3}
       propertyPath: m_LookaheadTime
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7064773651406001419, guid: 6b9f84db82e68ea4a8eeff94fd4bf6fe, type: 3}
       propertyPath: m_LookaheadIgnoreY
@@ -235,11 +237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7064773653128827744, guid: 6b9f84db82e68ea4a8eeff94fd4bf6fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 7064773653128827744, guid: 6b9f84db82e68ea4a8eeff94fd4bf6fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.6881895
+      value: 5.89819
       objectReference: {fileID: 0}
     - target: {fileID: 7064773653128827744, guid: 6b9f84db82e68ea4a8eeff94fd4bf6fe, type: 3}
       propertyPath: m_LocalPosition.z

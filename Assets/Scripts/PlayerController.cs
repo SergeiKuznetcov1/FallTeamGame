@@ -8,26 +8,34 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _gravity;
+    private Animator _animator;
 	private CharacterController _controller;
     private CapsuleCollider _collider;
     private Vector3 _direction;
     private float _hInput;
+    private bool _fireballAttack;
     private bool _isGrounded = true; 
     private bool _doubleJumpAble = true;
     public float HorInput { get => _hInput; }
+    public bool FireballAttack { get => _fireballAttack; set => _fireballAttack = value; }
     public bool IsGrounded { get => _isGrounded; }
     public bool DoubleJumpAble { get => _doubleJumpAble; }
 
     private void Start() {
         _controller = GetComponent<CharacterController>();
         _collider = GetComponent<CapsuleCollider>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Update() {
         MoveHorizontal();
         _isGrounded = Physics.CheckSphere(_groundCheck.position, 1f, _groundLayer);
         IncreaseGravity();
-        Jump();     
+        Jump();  
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Fireball")) {
+            print("work");
+            return;
+        }
         ChangeRotation();
         _controller.Move(_direction * Time.deltaTime);
     }
@@ -46,8 +54,13 @@ public class PlayerController : MonoBehaviour
     private void Jump() {
         if (_isGrounded) {
             _doubleJumpAble = true;
+            
             if (Input.GetButtonDown("Jump")) {
                 _direction.y = _jumpForce;
+            }
+
+            if (Input.GetKeyDown(KeyCode.F)) {
+                _fireballAttack = true;
             }
         }
         else {

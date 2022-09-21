@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         IncreaseGravity();
         Jump();  
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Fireball")) {
-            print("work");
             return;
         }
         ChangeRotation();

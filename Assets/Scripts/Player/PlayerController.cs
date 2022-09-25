@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveHorizontal() {
         _hInput = Input.GetAxis("Horizontal");
-        _direction.x = _hInput * _moveSpeed;
+        _direction.x = -_hInput * _moveSpeed;
     }
 
     private void IncreaseGravity() {
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeRotation() {
         if (_hInput != 0) {
-            Quaternion newRotation = Quaternion.LookRotation(new Vector3(_hInput, 0, 0));
+            Quaternion newRotation = Quaternion.LookRotation(new Vector3(-_hInput, 0, 0));
             transform.rotation = newRotation;
         }
     }

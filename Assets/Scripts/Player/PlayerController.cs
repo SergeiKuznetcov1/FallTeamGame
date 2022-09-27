@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _gravity;
+    private PlayerControls _playerControls;
     private Animator _animator;
 	private CharacterController _controller;
     private CapsuleCollider _collider;
@@ -21,6 +22,22 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded { get => _isGrounded; }
     public bool DoubleJumpAble { get => _doubleJumpAble; }
 
+    private void Awake() {
+        _playerControls = new PlayerControls();
+        _playerControls.Enable();
+
+        _playerControls.Land.Move.performed += ctx => {
+            _hInput = ctx.ReadValue<float>();
+        };
+
+        _playerControls.Land.Jump.performed += ctx => {
+            Jump();
+        };
+
+        _playerControls.Land.Fireball.performed += ctx => {
+            Fireball();
+        };
+    }
     private void Start() {
         _controller = GetComponent<CharacterController>();
         _collider = GetComponent<CapsuleCollider>();
@@ -31,7 +48,7 @@ public class PlayerController : MonoBehaviour
         MoveHorizontal();
         _isGrounded = Physics.CheckSphere(_groundCheck.position, 1f, _groundLayer);
         IncreaseGravity();
-        Jump();  
+        //Jump();  
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Fireball")) {
             return;
         }
@@ -40,7 +57,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void MoveHorizontal() {
-        _hInput = Input.GetAxis("Horizontal");
+        // old move input
+        //_hInput = Input.GetAxis("Horizontal");
         _direction.x = -_hInput * _moveSpeed;
     }
 
@@ -53,21 +71,32 @@ public class PlayerController : MonoBehaviour
     private void Jump() {
         if (_isGrounded) {
             _doubleJumpAble = true;
-            
+            _direction.y = _jumpForce;
+            /*
             if (Input.GetButtonDown("Jump")) {
                 _direction.y = _jumpForce;
             }
-
+            
             if (Input.GetKeyDown(KeyCode.F)) {
                 _fireballAttack = true;
             }
+            */
         }
+        // turn of DoubleJump
+        /*
         else {
-            if (_doubleJumpAble & Input.GetButtonDown("Jump")) {
+            if (_doubleJumpAble) {
                 _direction.y = _jumpForce;
                 _doubleJumpAble = false;
             }
         } 
+        */
+    }
+
+    private void Fireball() {
+        if (_isGrounded) {
+            _fireballAttack = true;
+        }
     }
 
     private void ChangeRotation() {

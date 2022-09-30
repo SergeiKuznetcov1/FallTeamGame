@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+    public float knockBackLength, knockBackForce;
+    public float knockBackCounter;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private float _moveSpeed;
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public bool DoubleJumpAble { get => _doubleJumpAble; }
 
     private void Awake() {
+        instance = this;
         _playerControls = new PlayerControls();
         _playerControls.Enable();
 
@@ -45,15 +49,21 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update() {
-        MoveHorizontal();
+  
         _isGrounded = Physics.CheckSphere(_groundCheck.position, 1f, _groundLayer);
-        IncreaseGravity();
-        //Jump();  
+        IncreaseGravity(); 
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Fireball")) {
             return;
         }
-        ChangeRotation();
-        _controller.Move(_direction * Time.deltaTime);
+        if (knockBackCounter <= 0) {
+            MoveHorizontal();
+            ChangeRotation();
+            _controller.Move(_direction * Time.deltaTime);
+        } 
+        else {
+            knockBackCounter -=  Time.deltaTime;
+            _controller.Move(_direction * Time.deltaTime);
+        }
     }
 
     private void MoveHorizontal() {
@@ -103,6 +113,16 @@ public class PlayerController : MonoBehaviour
         if (_hInput != 0) {
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(-_hInput, 0, 0));
             transform.rotation = newRotation;
+        }
+    }
+
+    public void KnockBack() {
+        knockBackCounter = knockBackLength;
+        if (transform.rotation.y < 0) {
+            _direction = new Vector3(knockBackForce, knockBackForce, 0);
+        }
+        else if (transform.rotation.y > 0) {
+            _direction = new Vector3(-knockBackForce, knockBackForce, 0);
         }
     }
 }

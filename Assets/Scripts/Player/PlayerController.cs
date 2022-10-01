@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _gravity;
+    [SerializeField] private float _groundCheckRadius;
     private PlayerControls _playerControls;
     private Animator _animator;
 	private CharacterController _controller;
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
   
-        _isGrounded = Physics.CheckSphere(_groundCheck.position, 1f, _groundLayer);
+        _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundLayer);
         IncreaseGravity(); 
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Fireball")) {
             return;

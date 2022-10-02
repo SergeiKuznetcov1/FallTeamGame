@@ -21,5 +21,6 @@ public class LevelManager : MonoBehaviour
         PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
         UIController.instance.UpdateHealthDisplay();
         PlayerController.instance.gameObject.SetActive(true);
+        PlayerController.instance.IsGrounded = true;
     }
 }

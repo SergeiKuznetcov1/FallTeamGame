@@ -11,6 +11,7 @@ public class CheckpointsController : MonoBehaviour
 
     private void Start() {
         _checkpoints = FindObjectsOfType<Checkpoint>();
+        spawnPoint = new Vector3(0, 1.0f, 0);
     }
     // Nothing to deactivate for now
     /*

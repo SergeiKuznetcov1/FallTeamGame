@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     private PlayerControls _playerControls;
     private Animator _animator;
 	private CharacterController _controller;
-    private CapsuleCollider _collider;
     private Vector3 _direction;
     private float _hInput;
     private bool _fireballAttack;
@@ -23,7 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool _doubleJumpAble = true;
     public float HorInput { get => _hInput; }
     public bool FireballAttack { get => _fireballAttack; set => _fireballAttack = value; }
-    public bool IsGrounded { get => _isGrounded; }
+    public bool IsGrounded { get => _isGrounded; set => _isGrounded = value; }
     public bool DoubleJumpAble { get => _doubleJumpAble; }
 
     private void Awake() {
@@ -43,10 +42,15 @@ public class PlayerController : MonoBehaviour
             Fireball();
         };
     }
+
+    private void OnEnable() {
+        _isGrounded = true;
+    }
     private void Start() {
         _controller = GetComponent<CharacterController>();
-        _collider = GetComponent<CapsuleCollider>();
         _animator = GetComponent<Animator>();
+
+
     }
 
     private void Update() {

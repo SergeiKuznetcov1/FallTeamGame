@@ -174,7 +174,7 @@ CharacterController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319227622190476783}
-  m_Material: {fileID: 13400000, guid: 218dd87c7dbe003498350d3a5519e672, type: 2}
+  m_Material: {fileID: 13400000, guid: b32beb28e8660c44993c716b7ddfd980, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

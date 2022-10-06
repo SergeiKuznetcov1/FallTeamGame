@@ -6,25 +6,24 @@ public class ParallaxBackground : MonoBehaviour
     public Transform[] backgrounds;
     public float parallaxDelta;
 
-    private float _lastXPos;
-    private float _lastYPos;
+    private float _lastCamXPos;
+    private float _lastCamYPos;
     private void Start() {
-        _lastXPos = cam.position.x;
-        _lastYPos = cam.position.y;
+        _lastCamXPos = cam.position.x;
+        _lastCamYPos = cam.position.y;
     }
 
     private void LateUpdate() {
-        float amountToMoveX = cam.position.x - _lastXPos;
-        float amountToMoveY = cam.position.y - _lastYPos;
+        float amountToMoveX = cam.position.x - _lastCamXPos;
+        float amountToMoveY = cam.position.y - _lastCamYPos;
         float parallaxValueX = 1;
         float parallaxValueY = 1;
-        _lastXPos = cam.position.x;
-        _lastYPos = cam.position.y;
+        _lastCamXPos = cam.position.x;
+        _lastCamYPos = cam.position.y;
         for (int i = 0; i < backgrounds.Length; i++) {
             backgrounds[i].position = backgrounds[i].position + new Vector3(amountToMoveX * parallaxValueX, amountToMoveY * parallaxValueY, 0);
             parallaxValueX += parallaxDelta;
             parallaxValueY -= parallaxDelta;
         }
-
     }
 }

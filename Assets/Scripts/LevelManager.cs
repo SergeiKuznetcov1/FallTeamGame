@@ -1,13 +1,25 @@
 using UnityEngine;
+using TMPro;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] _lamps;
+    [SerializeField] TextMeshProUGUI _lampFoundText;
 	public static LevelManager instance;
     public float waitToRespawn;
+    public int lampFoundCount;
 
     private void Awake() {
         instance = this;
+    }
+
+    private void Start() {
+        UpdateLampText();
+    }
+
+    public void UpdateLampText() {
+        _lampFoundText.text = $"Lamps activated: {lampFoundCount} / {_lamps.Length}";
     }
 
     public void RespawnPlayer() {

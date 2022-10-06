@@ -49,20 +49,21 @@ public class PlayerController : MonoBehaviour
     private void Start() {
         _controller = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
+    }
 
-
+    private void FixedUpdate() {
+        
     }
 
     private void Update() {
-  
         _isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundLayer);
         IncreaseGravity(); 
         if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Player_Fireball")) {
             return;
         }
         if (knockBackCounter <= 0) {
-            MoveHorizontal();
             ChangeRotation();
+            MoveHorizontal();
             _controller.Move(_direction * Time.deltaTime);
         } 
         else {
@@ -85,8 +86,9 @@ public class PlayerController : MonoBehaviour
 
     private void Jump() {
         if (_isGrounded) {
-            _doubleJumpAble = true;
+            //_doubleJumpAble = true;
             _direction.y = _jumpForce;
+            
             /*
             if (Input.GetButtonDown("Jump")) {
                 _direction.y = _jumpForce;

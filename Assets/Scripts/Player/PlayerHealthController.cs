@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-
     public static PlayerHealthController instance;
 	public int currentHealth;
 	public int maxHealth;

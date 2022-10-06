@@ -105,6 +105,8 @@ GameObject:
   - component: {fileID: 400002}
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
+  - component: {fileID: 2704152427494772584}
+  - component: {fileID: 5898030288153894232}
   m_Layer: 0
   m_Name: ErekiBall
   m_TagString: Untagged
@@ -4897,6 +4899,32 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!135 &2704152427494772584
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5898030288153894232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e36f3a03c351a41bf2e4e47e25ba2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _energyAmount: 40
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

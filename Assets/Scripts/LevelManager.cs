@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] _lamps;
-    [SerializeField] TextMeshProUGUI _lampFoundText;
+    [SerializeField] private GameObject[] _lamps;
+    [SerializeField] private TextMeshProUGUI _lampFoundText;
 	public static LevelManager instance;
     public float waitToRespawn;
     public int lampFoundCount;

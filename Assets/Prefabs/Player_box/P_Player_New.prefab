@@ -225,7 +225,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _moveSpeed: 8
-  _jumpForce: 10
+  _jumpForce: 11
   _gravity: -25
   _groundCheckRadius: 0.2
 --- !u!114 &4564776503428218825

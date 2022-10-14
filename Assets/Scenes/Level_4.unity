@@ -1086,6 +1086,9 @@ MonoBehaviour:
   heart3: {fileID: 1852697420}
   heartFull: {fileID: 8109154662235370213, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
   heartEmpty: {fileID: -4390673095631447188, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
+  _lampFoundText: {fileID: 2031075422}
+  _energySlider: {fileID: 1298101361}
+  _energyFillArea: {fileID: 1588442579}
 --- !u!4 &307219306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f5646dac2436f9f4d9628fecb25b99f9, type: 3}
@@ -4138,7 +4141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978327832}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -5.718445, y: 5.257493, z: 10}
+  m_LocalPosition: {x: -4.5628905, y: 5.257493, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5002,7 +5005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lamps:
   - {fileID: 7825849368453379398}
-  _lampFoundText: {fileID: 2031075422}
   waitToRespawn: 1
   lampFoundCount: 0
 --- !u!4 &1329176136
@@ -5032,9 +5034,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73c5964df0d58fa4c96795b1b658e8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _energySlider: {fileID: 1298101361}
-  _energyFillArea: {fileID: 1588442579}
   _energyReduceSpeed: 1
+  _sliderBarsAmount: 100
+  lightCurrentValue: 0
 --- !u!1001 &1333369488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7589,7 +7591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115908631}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.388445, y: -3.717493, z: 0}
+  m_LocalPosition: {x: -7.2328906, y: -3.717493, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8028,11 +8030,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6680262674137185640, guid: 1e71f2d98f1694e4a92904ec70009b86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.948444
+      value: -42.59
       objectReference: {fileID: 0}
     - target: {fileID: 6680262674137185640, guid: 1e71f2d98f1694e4a92904ec70009b86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.25
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 6680262674137185640, guid: 1e71f2d98f1694e4a92904ec70009b86, type: 3}
       propertyPath: m_LocalPosition.z

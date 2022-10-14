@@ -8,6 +8,8 @@ public class PlayerHealthController : MonoBehaviour
     [SerializeField] private float _invincibleLength;
 	[SerializeField] private float _invincibleCounter;
 
+    public delegate void TakeDamage();
+    public static event TakeDamage OnDamageTaken;
     private void Awake() {
         instance = this;
     }
@@ -28,14 +30,14 @@ public class PlayerHealthController : MonoBehaviour
 
             if (currentHealth <= 0) {
                 currentHealth = 0;
-                //gameObject.SetActive(false);
+                // gameObject.SetActive(false);
                 LevelManager.instance.RespawnPlayer();
             } else {
                 _invincibleCounter = _invincibleLength;
                 PlayerController.instance.KnockBack();
             }
-
-            UIController.instance.UpdateHealthDisplay();
+            OnDamageTaken?.Invoke();
+            // UIController.instance.UpdateHealthDisplay();
         }
     }
 }

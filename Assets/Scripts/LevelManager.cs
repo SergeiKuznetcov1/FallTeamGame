@@ -6,10 +6,14 @@ using System.Collections;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] _lamps;
-    [SerializeField] private TextMeshProUGUI _lampFoundText;
+    // [SerializeField] private TextMeshProUGUI _lampFoundText;
 	public static LevelManager instance;
     public float waitToRespawn;
     public int lampFoundCount;
+    public delegate void RespawnHealthUpdate();
+    public static event RespawnHealthUpdate OnRespawnHealthUpdate;
+    public delegate void LampTextUpdate(int lampsFound, int lampsTotal);
+    public static event LampTextUpdate OnLampFound;
 
     private void Awake() {
         instance = this;
@@ -20,7 +24,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void UpdateLampText() {
-        _lampFoundText.text = $"Lamps activated: {lampFoundCount} / {_lamps.Length}";
+        OnLampFound?.Invoke(lampFoundCount, _lamps.Length);
     }
 
     public void RespawnPlayer() {
@@ -32,7 +36,8 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitToRespawn);
         PlayerController.instance.transform.position = CheckpointsController.instance.spawnPoint;
         PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
-        UIController.instance.UpdateHealthDisplay();
+        // UIController.instance.UpdateHealthDisplay();
+        OnRespawnHealthUpdate?.Invoke();
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.IsGrounded = true;
     }

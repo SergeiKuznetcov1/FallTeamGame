@@ -1,11 +1,17 @@
 fileFormatVersion: 2
-guid: fdfe4f733faf1eb4aa0841ed481485bc
+guid: 40d0bdb035d0c3e449a2c1a21feac7c8
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
+      74: 818318334706275798
+    second: ARMATURE|dead
+  - first:
+      74: -8878761229473732678
+    second: ARMATURE|IDLE
+  - first:
+      74: 2496032319680283417
+    second: ARMATURE|walk
   externalObjects: {}
   materials:
     materialImportMode: 2

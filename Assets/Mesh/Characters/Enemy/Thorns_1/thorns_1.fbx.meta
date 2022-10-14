@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: fdfe4f733faf1eb4aa0841ed481485bc
+guid: 5f35e4bbebd31fc418e03eb0c68ea26f
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
+      74: 6053127218549102052
+    second: THORN_1|CubeAction.001
   externalObjects: {}
   materials:
     materialImportMode: 2

@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 6575175188727537552}
   - component: {fileID: 6575175188727537566}
   - component: {fileID: 6575175188727537554}
+  - component: {fileID: 6575175188678864060}
   m_Layer: 0
   m_Name: P_Enemy_Bat
   m_TagString: Untagged
@@ -505,7 +506,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6340750716873680850}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.8046688, y: 1.550651, z: 3.344665}
@@ -540,6 +541,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76e1570e46e1f1c48aff812d33351b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemToDrop: {fileID: 100002, guid: 391ec6f1311384e75b4888fd6fc26b7e, type: 3}
+  destroyDelay: 0.15
+--- !u!114 &6575175188678864060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6340750716873680850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff824fdabeac54c47b102a7a4e3dc058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6732829142814692314

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 public class UIController : MonoBehaviour
 {
-	public static UIController instance;
+	//public static UIController instance;
     [SerializeField] private Image heart1, heart2, heart3;
     [SerializeField] private Sprite heartFull, heartEmpty;
     [SerializeField] private TextMeshProUGUI _lampFoundText;
@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
     }
 
     private void Awake() {
-        instance = this;
+        //instance = this;
     }
 
     private void Update() {

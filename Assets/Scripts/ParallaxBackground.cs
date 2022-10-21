@@ -22,7 +22,7 @@ public class ParallaxBackground : MonoBehaviour
         _lastCamYPos = cam.position.y;
         for (int i = 0; i < backgrounds.Length; i++) {
             backgrounds[i].position = backgrounds[i].position + new Vector3(amountToMoveX * parallaxValueX, amountToMoveY * parallaxValueY, 0);
-            parallaxValueX += parallaxDelta;
+            parallaxValueX -= parallaxDelta;
             parallaxValueY -= parallaxDelta;
         }
     }

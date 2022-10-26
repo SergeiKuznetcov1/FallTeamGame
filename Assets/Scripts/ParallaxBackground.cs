@@ -13,7 +13,7 @@ public class ParallaxBackground : MonoBehaviour
         _lastCamYPos = cam.position.y;
     }
 
-    private void LateUpdate() {
+    private void Update() {
         float amountToMoveX = cam.position.x - _lastCamXPos;
         float amountToMoveY = cam.position.y - _lastCamYPos;
         float parallaxValueX = 1;

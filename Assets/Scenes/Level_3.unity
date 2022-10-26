@@ -6329,15 +6329,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1091506599640938325, guid: 582e5fb61fb964f4cb3d808fd5aac8a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.12
+      value: -1.54
       objectReference: {fileID: 0}
     - target: {fileID: 1091506599640938325, guid: 582e5fb61fb964f4cb3d808fd5aac8a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.68
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 1091506599640938325, guid: 582e5fb61fb964f4cb3d808fd5aac8a3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1091506599640938325, guid: 582e5fb61fb964f4cb3d808fd5aac8a3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6459,11 +6459,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3653416244411835712, guid: dd4c29a69ab68a84c8d0952a566855ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9930897
+      value: -5.716598
       objectReference: {fileID: 0}
     - target: {fileID: 3653416244411835712, guid: dd4c29a69ab68a84c8d0952a566855ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.738665
+      value: 5.257493
       objectReference: {fileID: 0}
     - target: {fileID: 3653416244411835712, guid: dd4c29a69ab68a84c8d0952a566855ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6507,11 +6507,11 @@ PrefabInstance:
       objectReference: {fileID: 1164217217}
     - target: {fileID: 3653416245547567170, guid: dd4c29a69ab68a84c8d0952a566855ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.1130896
+      value: -4.176598
       objectReference: {fileID: 0}
     - target: {fileID: 3653416245547567170, guid: dd4c29a69ab68a84c8d0952a566855ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0586643
+      value: -3.587493
       objectReference: {fileID: 0}
     - target: {fileID: 3653416245547567171, guid: dd4c29a69ab68a84c8d0952a566855ad, type: 3}
       propertyPath: m_Follow

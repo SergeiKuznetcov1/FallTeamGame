@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2704152427494772584}
   - component: {fileID: 5898030288153894232}
   m_Layer: 0
-  m_Name: ErekiBall
+  m_Name: P_Energy_Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
